@@ -36,7 +36,7 @@
         "background_color": "#fafafa",
         "heading": "ABOUT US",
         "heading_size": "text-h3",
-        "text": "<p>We distill our organic lavender onsite in Bodega Bay, CA to create high quality wellness, home, and culinary products</p>",
+        "text": "<p>We distill our fresh lavender onsite in Bodega Bay, CA to create high quality wellness, home, and culinary products</p>",
         "text_style": "text-h3",
         "icon_size": 32,
         "icon_color": "#6149a2"
@@ -119,7 +119,7 @@
           "settings": {
             "collection": "home-goods",
             "custom_title": "Home Goods",
-            "custom_description": "Fill your home with the soothing scent of lavender and a lasting sense of peacefulness",
+            "custom_description": "Fill your space with soothing lavender goods made to relax your mind",
             "custom_button_label": "Shop Now"
           }
         },
@@ -128,7 +128,7 @@
           "settings": {
             "collection": "wellness-products",
             "custom_title": "Wellness Products",
-            "custom_description": "Recenter your body and mind with pure lavender essentials that restore balance",
+            "custom_description": "Refresh your routine with natural lavender that nurture your body",
             "custom_button_label": "Shop Now"
           }
         },
@@ -137,7 +137,7 @@
           "settings": {
             "collection": "culinary-essentials",
             "custom_title": "Culinary Essentials",
-            "custom_description": "Savor the taste of tranquility with lavender blends made to elevate every bite",
+            "custom_description": "Savor calming lavender flavors crafted to elevate every dish and drink",
             "custom_button_label": "Shop Now"
           }
         }

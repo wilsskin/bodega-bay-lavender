@@ -6,12 +6,17 @@ class SearchForm extends HTMLElement {
 
     if (this.input) {
       this.input.form.addEventListener('reset', this.onFormReset.bind(this));
+      // Immediate listener for button state update (no debounce)
+      this.input.addEventListener('input', this.updateSearchButtonState.bind(this));
+      // Debounced listener for other functionality
       this.input.addEventListener(
         'input',
         debounce((event) => {
           this.onChange(event);
         }, 300).bind(this)
       );
+      // Initialize button state on page load
+      this.updateSearchButtonState();
     }
   }
 
@@ -27,6 +32,17 @@ class SearchForm extends HTMLElement {
 
   onChange() {
     this.toggleResetButton();
+    this.updateSearchButtonState();
+  }
+
+  updateSearchButtonState() {
+    const searchField = this.querySelector('.search-field');
+    if (!searchField) return;
+    if (this.input.value.trim().length > 0) {
+      searchField.classList.add('has-text');
+    } else {
+      searchField.classList.remove('has-text');
+    }
   }
 
   shouldResetForm() {
@@ -41,6 +57,7 @@ class SearchForm extends HTMLElement {
       this.input.value = '';
       this.input.focus();
       this.toggleResetButton();
+      this.updateSearchButtonState();
     }
   }
 }
