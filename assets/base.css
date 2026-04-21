@@ -2336,8 +2336,10 @@ input[type='checkbox'] {
 .announcement-bar__link:hover,
 .announcement-bar__link:hover .announcement-bar__message,
 .announcement-bar__link:hover .announcement-bar__message span {
-  text-decoration: none;
-  color: #E1E0F1 !important;
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-color: currentColor;
 }
 
 .announcement-bar__link .icon-arrow {
@@ -2933,14 +2935,9 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-}
-
-.header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
 }
 
 .header__submenu {

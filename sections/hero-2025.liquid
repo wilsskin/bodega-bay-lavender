@@ -17,7 +17,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: 1;
+    z-index: 0;
   }
 
   .hero-2025__content {
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--spacing-medium);
   padding-top: {% if template contains 'collection' %}11rem{% else %}20rem{% endif %};
   justify-content: flex-start;
 }
@@ -43,7 +43,7 @@
 
   .hero-2025__heading {
     color: {{ section.settings.text_color | default: '#ffffff' }};
-    font-family: 'Lora', serif;
+    font-family: var(--font-heading-family);
     font-weight: 700;
     line-height: 1.35;
     margin: 0;
@@ -52,7 +52,7 @@
 
   .hero-2025__subtitle {
     color: {{ section.settings.text_color | default: '#ffffff' }};
-    font-family: 'Lora', serif;
+    font-family: var(--font-heading-family);
     font-weight: 400;
     line-height: 1.36;
     margin: 0;
@@ -64,14 +64,14 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 56px;
+    padding: 1.2rem 5.6rem;
     background-color: {{ section.settings.button_color | default: '#636DCF' }};
     color: {{ section.settings.button_text_color | default: '#ffffff' }};
     text-decoration: none;
-    border-radius: 8px;
-    font-family: 'Lora', serif;
+    border-radius: var(--buttons-radius);
+    font-family: var(--font-heading-family);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 1.36;
     transition: all 0.3s ease;
     border: none;
@@ -79,7 +79,7 @@
   }
 
   .hero-2025__button:hover {
-    background-color: #505ABC;
+    background-color: var(--color-brand-purple-hover);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
@@ -92,57 +92,59 @@
     .hero-2025__content {
       padding: 0 var(--spacing-small);
       padding-top: {% if template contains 'collection' %}6.5rem{% else %}12.5rem{% endif %};
-      gap: 20px;
+      gap: 2rem;
     }
-    
+
     .hero-2025__text-group {
-      gap: 8px;
+      gap: var(--spacing-xsmall);
     }
-    
+
     .hero-2025__heading {
-      font-size: 36px;
+      font-size: 3.6rem;
     }
-    
+
     .hero-2025__subtitle {
-      font-size: 20px;
+      font-size: 2rem;
     }
-    
+
     .hero-2025__button {
-      padding: 10px 32px;
-      font-size: 16px;
+      padding: 1rem 3.2rem;
+      font-size: 1.6rem;
     }
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 480px) {
      .hero-2025 {
       height: {% if template contains 'collection' %}125px{% else %}300px{% endif %};
     }
-    
+
     .hero-2025__content {
       padding-top: {% if template contains 'collection' %}3.5rem{% else %}8.5rem{% endif %};
+      gap: var(--spacing-small);
     }
-    
+
     .hero-2025__heading {
-      font-size: 28px;
+      font-size: 2.8rem;
     }
-    
+
     .hero-2025__subtitle {
-      font-size: 16px;
+      font-size: 1.6rem;
     }
-    
-    .hero-2025__content {
-      gap: 16px;
-    }
+
     .hero-2025__text-group {
-      gap: 4px;
+      gap: 0.4rem;
     }
     .hero-2025__button {
-      font-size: 14px;
+      font-size: 1.4rem;
     }
   }
 {%- endstyle -%}
 
 <div class="hero-2025">
+  {%- if section.settings.overlay_opacity > 0 -%}
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }}); z-index: 1; pointer-events: none;"></div>
+  {%- endif -%}
+
   {%- if section.settings.image != blank -%}
     {%- liquid
       assign image = section.settings.image
@@ -270,6 +272,16 @@
       "type": "url",
       "id": "button_link",
       "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image Darkness Overlay",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
     },
     {
       "type": "color",
