@@ -82,19 +82,23 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  text-decoration: none;
   font-weight: 600;
   width: 18rem;
+  color: #636DCF;
+  text-decoration: underline;
+  text-decoration-color: #636DCF;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.2rem;
+  transition: color 100ms ease, text-decoration-color 100ms ease;
 }
 
 .article-template__link:hover {
-  color: #505ABC;
+  color: #4A52B8;
+  text-decoration-color: #4A52B8;
 }
 
 .article-template__link .icon-wrap {
-  display: flex;
-  margin-right: 1rem;
-  transform: rotate(180deg);
+  display: none;
 }
 
 .article-template__content {
@@ -207,6 +211,12 @@
 
 }
 
+.article-template__back-button {
+  color: #4D4D62;
+  text-decoration-color: #4D4D62;
+}
+
 .article-template__back-button:hover {
   color: #000000;
+  text-decoration-color: #000000;
 }

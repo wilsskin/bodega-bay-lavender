@@ -84,12 +84,7 @@
 
   <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="article-template__back-buttons">
-      <button type="button" onclick="window.history.back();" class="article-template__link article-template__back-button link animate-arrow">
-        <span class="icon-wrap">
-          <span class="svg-wrapper">
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </span>
-        </span>
+      <button type="button" onclick="window.history.back();" class="article-template__link article-template__back-button link">
         Back
       </button>
       <a href="{{ blog.url }}" class="article-template__link link">

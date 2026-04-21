@@ -404,17 +404,22 @@
   transform: scale(1);
 }
 
-/* Add transition to default state */
+/* Default shadow state */
 .card__media img {
   border-radius: var(--border-radius);
-  transition: border-color 0.15s ease-out, filter 0.3s ease-out !important;
-  border: 1px solid #ffffff;
+  transition: box-shadow 0.12s ease-out, filter 0.12s ease-out;
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.04);
 }
 
-/* Border color change on hover */
+/* Deeper shadow + darkness overlay on hover */
 .card-wrapper:hover .card__media img {
-  border: 1px solid #636DCF;
-  border-color: #636DCF;
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.08),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.06);
   filter: brightness(0.95);
 }
 
