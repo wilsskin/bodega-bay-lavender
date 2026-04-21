@@ -6,7 +6,18 @@
   .announcement-bar__message,
   .announcement-bar__link,
   .utility-bar {
-    font-family: 'Lora', serif !important;
+    font-family: var(--font-heading-family) !important;
+  }
+
+  /* Replace opacity hover with underline matching header nav style */
+  .announcement-bar__link.link--text:hover,
+  .announcement-bar__link:hover,
+  .announcement-bar__link:focus {
+    color: currentColor;
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    text-decoration-color: currentColor;
   }
 {%- endstyle -%}
 

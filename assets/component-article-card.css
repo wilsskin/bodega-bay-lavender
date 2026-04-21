@@ -77,19 +77,21 @@
   margin-top: 1rem;
   display: inline-flex;
   align-items: center;
-  justify-content: left;
-  gap: 10px;
+  justify-content: flex-start;
   background: none;
   border: none;
   border-radius: 0;
   padding: 0;
   color: #636DCF;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #636DCF;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.2rem;
   font-family: var(--font-body-family);
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 1.36;
-  transition: color 0.3s ease;
+  transition: color 100ms ease, text-decoration-color 100ms ease;
   cursor: pointer;
 }
 
@@ -103,21 +105,12 @@
 .article-card__read-more:hover {
   background: none;
   color: #4A52B8;
+  text-decoration-color: #4A52B8;
 }
 
 /* Remove global button border hover effect */
 .article-card__read-more:hover::after {
   display: none !important;
-}
-
-/* Arrow animation on hover */
-.article-card__read-more .arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.article-card__read-more:hover .arrow {
-  transform: translateX(4px);
 }
 
 /* Disable border hover effect on blog post images */
