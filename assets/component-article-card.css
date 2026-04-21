@@ -82,9 +82,9 @@
   border: none;
   border-radius: 0;
   padding: 0;
-  color: #636DCF;
+  color: var(--color-brand-purple);
   text-decoration: underline;
-  text-decoration-color: #636DCF;
+  text-decoration-color: var(--color-brand-purple);
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.2rem;
   font-family: var(--font-body-family);
@@ -104,8 +104,8 @@
 
 .article-card__read-more:hover {
   background: none;
-  color: #4A52B8;
-  text-decoration-color: #4A52B8;
+  color: var(--color-brand-purple-link-hover);
+  text-decoration-color: var(--color-brand-purple-link-hover);
 }
 
 /* Remove global button border hover effect */
