@@ -23,7 +23,7 @@
         "subtitle_style": "h3",
         "button_label": "Shop Now",
         "button_link": "shopify://collections/featured-products",
-        "overlay_opacity": 65,
+        "overlay_opacity": 0,
         "text_color": "#ffffff",
         "button_color": "#636dcf",
         "button_text_color": "#ffffff",
