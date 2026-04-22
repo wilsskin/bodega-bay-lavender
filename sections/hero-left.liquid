@@ -1,0 +1,338 @@
+{%- style -%}
+  .hero-left {
+    position: relative;
+    width: 100%;
+    height: {% if template contains 'collection' %}300px{% else %}600px{% endif %};
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-left__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .hero-left__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    padding-top: {% if template contains 'collection' %}11rem{% else %}20rem{% endif %};
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-left__container {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  .hero-left__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 440px;
+    gap: var(--spacing-medium);
+  }
+
+  .hero-left__text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+  }
+
+  .hero-left__heading {
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-align: left;
+  }
+
+  .hero-left__subtitle {
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    line-height: 1.36;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-align: left;
+  }
+
+  .hero-left__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1.2rem 5.6rem;
+    background-color: {{ section.settings.button_color | default: '#636DCF' }};
+    color: {{ section.settings.button_text_color | default: '#ffffff' }};
+    text-decoration: none;
+    border-radius: var(--buttons-radius);
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.36;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero-left__button:hover {
+    background-color: var(--color-brand-purple-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Mobile responsive adjustments */
+  @media screen and (max-width: 750px) {
+    .hero-left {
+      height: {% if template contains 'collection' %}200px{% else %}400px{% endif %};
+    }
+
+    .hero-left__container {
+      padding-top: {% if template contains 'collection' %}6.5rem{% else %}12.5rem{% endif %};
+    }
+
+    .hero-left__content {
+      gap: 2rem;
+    }
+
+    .hero-left__text-group {
+      gap: var(--spacing-xsmall);
+    }
+
+    .hero-left__heading {
+      font-size: 3.6rem;
+    }
+
+    .hero-left__subtitle {
+      font-size: 2rem;
+    }
+
+    .hero-left__button {
+      padding: 1rem 3.2rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .hero-left {
+      height: {% if template contains 'collection' %}125px{% else %}300px{% endif %};
+    }
+
+    .hero-left__container {
+      padding-top: {% if template contains 'collection' %}3.5rem{% else %}8.5rem{% endif %};
+    }
+
+    .hero-left__content {
+      gap: var(--spacing-small);
+    }
+
+    .hero-left__heading {
+      font-size: 2.8rem;
+    }
+
+    .hero-left__subtitle {
+      font-size: 1.6rem;
+    }
+
+    .hero-left__text-group {
+      gap: 0.4rem;
+    }
+
+    .hero-left__button {
+      font-size: 1.4rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hero-left">
+  {%- if section.settings.overlay_opacity > 0 -%}
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }}); z-index: 1; pointer-events: none;"></div>
+  {%- endif -%}
+
+  {%- if section.settings.image != blank -%}
+    {%- liquid
+      assign image = section.settings.image
+      assign image_height = image.width | divided_by: image.aspect_ratio | round
+      assign widths = '375, 550, 750, 1100, 1440, 1780, 2000'
+      assign sizes = '100vw'
+      if template contains 'collection'
+        assign sizes = '(min-width: 750px) 100vw, 100vw'
+      endif
+      assign image_alt = image.alt | escape
+      assign default_width = 1440
+    -%}
+    {{
+      image
+      | image_url: width: default_width
+      | image_tag: loading: 'eager', fetchpriority: 'high', widths: widths, sizes: sizes, height: image_height, width: image.width, alt: image_alt, class: 'hero-left__image'
+    }}
+  {%- else -%}
+    <div class="hero-left__placeholder" style="background-color: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+      <p>Please add an image in the section settings</p>
+    </div>
+  {%- endif -%}
+
+  <div class="hero-left__container">
+    <div class="hero-left__content">
+      <div class="hero-left__text-group">
+        {%- if section.settings.heading != blank -%}
+          <h1 class="hero-left__heading {{ section.settings.heading_size | default: 'h1' }}">
+            {{ section.settings.heading }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.subtitle != blank -%}
+          <p class="hero-left__subtitle {{ section.settings.subtitle_style | default: 'h3' }}">
+            {{ section.settings.subtitle }}
+          </p>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        {%- liquid
+          assign button_target = ''
+          assign button_rel = ''
+          if section.settings.button_link contains 'airbnb.com'
+            assign button_target = 'target="_blank"'
+            assign button_rel = 'rel="noopener noreferrer"'
+          endif
+        -%}
+        <a href="{{ section.settings.button_link }}" class="hero-left__button" {{ button_target }} {{ button_rel }}>
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Left",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Hero Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your subtitle text goes here"
+    },
+    {
+      "type": "select",
+      "id": "subtitle_style",
+      "label": "Subtitle Style",
+      "options": [
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "body",
+          "label": "Body"
+        },
+        {
+          "value": "tag",
+          "label": "Tag"
+        }
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image Darkness Overlay",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#52448C"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#6149A2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Left"
+    }
+  ]
+}
+{% endschema %}
