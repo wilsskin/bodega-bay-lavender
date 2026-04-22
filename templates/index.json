@@ -350,6 +350,24 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "hero_left_LkpJGy": {
+      "type": "hero-left",
+      "name": "Hero Left",
+      "settings": {
+        "image": "shopify://shop_images/hero-new.webp",
+        "heading": "Coastal lavender to help you unwind",
+        "heading_size": "h1",
+        "subtitle": "Lavender goods from our family ranch on the Sonoma Coast",
+        "subtitle_style": "h3",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/featured-products",
+        "overlay_opacity": 0,
+        "text_color": "#ffffff",
+        "button_color": "#636dcf",
+        "button_text_color": "#ffffff",
+        "button_hover_color": "#334fb4"
+      }
     }
   },
   "order": [
@@ -363,6 +381,7 @@
     "featured_blog_Ac9YWU",
     "gallery_2025_Mjcffb",
     "video_TX8Ygg",
-    "newsletter_iTBiza"
+    "newsletter_iTBiza",
+    "hero_left_LkpJGy"
   ]
 }
