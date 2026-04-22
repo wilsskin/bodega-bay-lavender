@@ -68,8 +68,7 @@
   padding-right: 2.4rem;
 }
 
-.mega-menu__link:hover,
-.mega-menu__link--active {
+.mega-menu__link:hover {
   color: rgb(var(--color-foreground));
   text-decoration: underline;
 }
