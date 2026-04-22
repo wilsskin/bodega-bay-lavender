@@ -210,7 +210,7 @@
         "text_MUKfQm": {
           "type": "text",
           "settings": {
-            "text": "<p>We love opening our home up to people and allowing them to experience the beauty of Bodega Bay. We offer rental stays, group events, retreats, and learning sessions.   <br/><br/>Visit our <a href=\"/pages/stay-with-us\" title=\"Stay With Us\"><strong>stay with us</strong></a> page or contact us special events like a <a href=\"mailto:Jami@bodegabaylavender.com\" target=\"_blank\" title=\"mailto:Jami@bodegabaylavender.com\"><strong>lunch & learn!</strong></a></p>",
+            "text": "<p>We love opening our home up to people and allowing them to experience the beauty of Bodega Bay. We offer rental stays, group events, retreats, and learning sessions.   <br/><br/>Visit our <a href=\"/pages/stay-with-us\" title=\"Stay With Us\"><strong>stay with us</strong></a> page or <a href=\"mailto:Jami@bodegabaylavender.com\" target=\"_blank\" title=\"mailto:Jami@bodegabaylavender.com\"><strong>contact us</strong></a> for special events like a lunch and learn!</p>",
             "text_style": "body"
           }
         }
