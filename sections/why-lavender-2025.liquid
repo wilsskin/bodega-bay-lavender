@@ -1,6 +1,6 @@
 {%- style -%}
   .section-{{ section.id }} {
-    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    background-color: {{ section.settings.background_color | default: '#F5F1E8' }};
     padding: var(--spacing-section-small) 0;
   }
 
@@ -67,10 +67,10 @@
 
   .section-{{ section.id }}__feature {
     flex: 1;
-    max-width: 30rem; /* 320px total */
+    max-width: 33.6rem; /* 320px total */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xsmall); /* 8px - using variable */
+    gap: var(--spacing-small); /* 8px - using variable */
     align-items: flex-start;
     text-align: left;
   }
@@ -79,14 +79,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-bottom: var(--spacing-small);
+    gap: 0.8rem;
   }
 
   .section-{{ section.id }}__feature-icon {
-    width: 6rem;
-    height: 6rem;
+    width: 4.8rem;
+    height: 4.8rem;
     background-color: var(--color-brand-icon-bg);
-    border-radius: 6rem;
+    border-radius: 4.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,39 +95,38 @@
 
   .section-{{ section.id }}__feature-icon svg,
   .section-{{ section.id }}__feature-icon img {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     color: var(--color-brand-purple-deep);
     fill: var(--color-brand-purple-deep);
   }
 
   .section-{{ section.id }}__feature-title {
     font-family: var(--font-heading-family);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.8rem;
     line-height: 1.36;
-    color: #000000;
+    color: var(--color-brand-text-muted);
     margin: 0;
-    flex: 1;
   }
 
   .section-{{ section.id }}__feature-text {
     font-family: var(--font-heading-family);
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-style: italic;
     line-height: 1.5;
-    color: var(--color-brand-text-muted);
+    color: #000000;
     margin: 0;
   }
 
   .section-{{ section.id }}__inline-link {
-    color: var(--color-brand-purple);
+    color: #000000;
     text-decoration: underline;
   }
 
   .section-{{ section.id }}__inline-link:hover {
-    color: var(--color-brand-purple-link-hover);
+    color: var(--color-brand-purple-hover);
   }
 
   @media screen and (max-width: 1024px) {
@@ -135,10 +134,7 @@
       gap: 1.5rem; /* Increase gap on smaller screens */
     }
     
-    .section-{{ section.id }}__feature {
-      width: 30.4rem; /* 304px total (272px content + 32px padding) */
-      max-width: 30.4rem; /* 304px total */
-    }
+   
   }
 
   @media screen and (max-width: 900px) {
@@ -188,14 +184,14 @@
     }
 
     .section-{{ section.id }}__feature-icon {
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .section-{{ section.id }}__feature-icon svg,
   .section-{{ section.id }}__feature-icon img {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
   }
 
 
@@ -210,9 +206,9 @@
     }
 
     .section-{{ section.id }}__feature-icon {
-      width: 4rem;
-      height: 4rem;
-      border-radius: 1.2rem;
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 3.6rem;
     }
 
     .section-{{ section.id }}__features {
@@ -275,8 +271,8 @@
   }
 
   .section-{{ section.id }}__cta-link:hover {
-    color: var(--color-brand-purple-link-hover);
-    text-decoration-color: var(--color-brand-purple-link-hover);
+    color: var(--color-brand-purple-hover);
+    text-decoration-color: var(--color-brand-purple-hover);
   }
 
   /* Reduce bottom margin on small screens */
@@ -334,10 +330,10 @@
             <div class="section-{{ section.id }}__feature-icon">
               {{ 'icon-burn.svg' | asset_url | img_tag: 'Burn treatment icon', 'width="22" height="22"' }}
             </div>
+            <h3 class="section-{{ section.id }}__feature-title">
+              {{ section.settings.feature_1_title | default: 'Treat Burns' }}
+            </h3>
           </div>
-          <h3 class="section-{{ section.id }}__feature-title">
-            {{ section.settings.feature_1_title | default: 'Treat burn wounds' }}
-          </h3>
           <p class="section-{{ section.id }}__feature-text">
             "I always keep <a href="/products/lavender-essential-oil" class="section-{{ section.id }}__inline-link">lavender essential oil</a> in the kitchen in case I burn myself"
           </p>
@@ -353,10 +349,10 @@
             <div class="section-{{ section.id }}__feature-icon">
               {{ 'icon-repel.svg' | asset_url | img_tag: 'Insect repellent icon', 'width="22" height="22"' }}
             </div>
+            <h3 class="section-{{ section.id }}__feature-title">
+              {{ section.settings.feature_2_title | default: 'Repel Insects' }}
+            </h3>
           </div>
-          <h3 class="section-{{ section.id }}__feature-title">
-            {{ section.settings.feature_2_title | default: 'Repel insects' }}
-          </h3>
           <p class="section-{{ section.id }}__feature-text">
             "We use <a href="/products/lavender-pillow-mist" class="section-{{ section.id }}__inline-link">lavender hydrosol</a> as a mosquito repellent everyday in Kauai"
           </p>
@@ -372,10 +368,10 @@
             <div class="section-{{ section.id }}__feature-icon">
               {{ 'icon-glass.svg' | asset_url | img_tag: 'Glass cleaner icon', 'width="22" height="22"' }}
             </div>
+            <h3 class="section-{{ section.id }}__feature-title">
+              {{ section.settings.feature_3_title | default: 'Clean Glass' }}
+            </h3>
           </div>
-          <h3 class="section-{{ section.id }}__feature-title">
-            {{ section.settings.feature_3_title | default: 'Natural glass cleaner' }}
-          </h3>
           <p class="section-{{ section.id }}__feature-text">
             "<a href="/products/lavender-pillow-mist" class="section-{{ section.id }}__inline-link">Lavender hydrosol</a> is the best non-chemical glass cleaner I've ever used"
           </p>
@@ -401,7 +397,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background Color",
-      "default": "#ffffff"
+      "default": "#F5F1E8"
     },
     {
       "type": "text",

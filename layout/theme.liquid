@@ -136,12 +136,12 @@
 
         /* Brand colors - use these instead of hardcoded hex in all sections */
         --color-brand-purple: #636DCF;
-        --color-brand-purple-hover: #505ABC;
-        --color-brand-purple-link-hover: #4A52B8;
-        --color-brand-purple-deep: #6149A2;
-        --color-brand-lavender-bg: #EDECFE;
+        --color-brand-purple-hover: #4A52B8;        /* single hover: button AND link */
+        --color-brand-purple-deep: #52448C;         /* accent only — icons/emphasis, never buttons */
+        --color-brand-lavender-bg: #F5F1E8;         /* cream wash — 1-2 sections per page max */
+        --color-brand-cream: #F5F1E8;
         --color-brand-text-muted: #4D4D62;
-        --color-brand-icon-bg: #FAFAFA;
+        --color-brand-icon-bg: #EDE8D9;             /* icon chip on cream sections */
 
         --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
         --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;

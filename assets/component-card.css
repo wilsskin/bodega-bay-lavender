@@ -495,11 +495,11 @@
 }
 
 .card-information > .price {
-  color: #4D4D62;
+  color: var(--color-brand-text-muted);
 }
 
 .card--horizontal .card-information > .price {
-  color: rgba(77, 77, 98, 0.75); /* #4D4D62 with 75% opacity */
+  color: rgba(77, 77, 98, 0.75); /* muted text at 75% opacity */
 }
 
 .card-information > .rating {

@@ -41,7 +41,7 @@
     text-transform: uppercase;
     padding: 8px 32px;
     border-radius: 24px;
-    border: 2px solid #6149A2;
+    border: 2px solid var(--color-brand-purple);
     background-color: transparent;
     box-sizing: border-box;
     transition: all 0.3s ease;
@@ -50,20 +50,20 @@
 
   /* Link styling - hover state */
   .section-{{ section.id }}__link:hover:not(.active) {
-    background-color: #EDECFE;
+    background-color: var(--color-brand-lavender-bg);
     color: #000000;
   }
 
   /* Link styling - active state */
   .section-{{ section.id }}__link.active {
-    background-color: #6149A2;
-    border: 2px solid #6149A2;
+    background-color: var(--color-brand-purple);
+    border: 2px solid var(--color-brand-purple);
     color: #ffffff;
   }
-  
+
   /* Active state should stay purple with white text even on hover */
   .section-{{ section.id }}__link.active:hover {
-    background-color: #6149A2;
+    background-color: var(--color-brand-purple);
     color: #ffffff;
   }
 

@@ -208,9 +208,9 @@
       },
       "scheme-e50f3282-3573-43ac-9184-872d41a92da2": {
         "settings": {
-          "background": "#edecfe",
+          "background": "#f5f1e8",
           "background_gradient": "",
-          "text": "#ffffff",
+          "text": "#000000",
           "button": "#636dcf",
           "button_label": "#ffffff",
           "secondary_button_label": "#636dcf",
@@ -219,7 +219,7 @@
       },
       "scheme-92cc1630-8d97-4109-ab2d-f4d71643a00c": {
         "settings": {
-          "background": "#edecfe",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#000000",
           "button": "#636dcf",
@@ -230,7 +230,7 @@
       },
       "scheme-97072ff2-350e-46a5-afe4-334f5753a17f": {
         "settings": {
-          "background": "#e1e0f1",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#000000",
           "button": "#121212",
@@ -245,25 +245,36 @@
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#ffffff",
+          "button_label": "#636dcf",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
       "scheme-3fee48a8-cacd-4423-85c1-e0c37093c3be": {
         "settings": {
-          "background": "#6149a2",
+          "background": "#52448C",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#6149a2",
+          "button": "#636dcf",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       },
       "scheme-a0dd312f-c95e-4a0c-86b6-df8249e3e52a": {
         "settings": {
           "background": "#fafafa",
+          "background_gradient": "",
+          "text": "#000000",
+          "button": "#636dcf",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-bbl-cream": {
+        "settings": {
+          "background": "#f5f1e8",
           "background_gradient": "",
           "text": "#000000",
           "button": "#636dcf",

@@ -25,7 +25,7 @@
         "subtitle_color": "#cccccc",
         "button_color": "#636dcf",
         "button_text_color": "#ffffff",
-        "button_hover_color": "#334fb4"
+        "button_hover_color": "#4a52b8"
       }
     },
     "hero_2025_WkhdLt": {
@@ -47,7 +47,7 @@
         "text_color": "#ffffff",
         "button_color": "#636dcf",
         "button_text_color": "#ffffff",
-        "button_hover_color": "#6149a2"
+        "button_hover_color": "#4a52b8"
       }
     },
     "about_2025_WUiYAc": {
@@ -60,7 +60,7 @@
         "text": "<p>We distill our fresh lavender onsite in Bodega Bay, CA to create high quality wellness, home, and culinary products</p>",
         "text_style": "text-h3",
         "icon_size": 32,
-        "icon_color": "#6149a2"
+        "icon_color": "#52448c"
       }
     },
     "featured_collection": {
@@ -186,7 +186,7 @@
       "type": "why-lavender-2025",
       "name": "Why Lavender 2025",
       "settings": {
-        "background_color": "#e1e0f1",
+        "background_color": "#f5f1e8",
         "heading": "Why Use Lavender?",
         "text": "Beyond the popular use cases like stress relief, aromatherapy, and floral beauty, there are many ways to use lavender!",
         "feature_1_title": "Treat burn wounds effectively",
@@ -361,7 +361,7 @@
         "email_form_AtzNrq"
       ],
       "custom_css": [
-        ".newsletter-2025 {background-color: #e1e0f1;}"
+        ".newsletter-2025 {background-color: #f5f1e8;}"
       ],
       "name": "t:sections.newsletter.presets.name",
       "settings": {

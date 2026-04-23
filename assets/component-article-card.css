@@ -104,8 +104,8 @@
 
 .article-card__read-more:hover {
   background: none;
-  color: var(--color-brand-purple-link-hover);
-  text-decoration-color: var(--color-brand-purple-link-hover);
+  color: var(--color-brand-purple-hover);
+  text-decoration-color: var(--color-brand-purple-hover);
 }
 
 /* Remove global button border hover effect */

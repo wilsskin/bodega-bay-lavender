@@ -322,7 +322,7 @@ slider-component.slider-component-full-width {
 
 .slider-button {
   color: #ffffff;
-  background: #4D4D62;
+  background: var(--color-brand-text-muted);
   border: none;
   cursor: pointer;
   width: 32px;
@@ -336,7 +336,7 @@ slider-component.slider-component-full-width {
 
 .slider-button:not([disabled]):hover {
   color: #ffffff;
-  background: #6149A2;
+  background: var(--color-brand-purple-deep);
 }
 
 .slider-button[disabled] {

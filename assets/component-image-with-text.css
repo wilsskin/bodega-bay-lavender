@@ -465,6 +465,21 @@
   margin-bottom: 1rem;
 }
 
+.image-with-text__text a,
+.image-with-text__content a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-purple);
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.2rem;
+  transition: color 100ms ease, text-decoration-color 100ms ease;
+}
+
+.image-with-text__text a:hover,
+.image-with-text__content a:hover {
+  color: var(--color-brand-purple-hover);
+  text-decoration-color: var(--color-brand-purple-hover);
+}
+
 @media screen and (max-width: 749px) {
   .collapse-padding .image-with-text__grid .image-with-text__content {
     padding-left: 0;

@@ -15,13 +15,16 @@ All brand colors are now defined as CSS custom properties in `layout/theme.liqui
 
 | Token | Hex | Use |
 |---|---|---|
-| `--color-brand-purple` | `#636DCF` | CTA buttons, inline links, accents |
-| `--color-brand-purple-hover` | `#505ABC` | CTA button hover state |
-| `--color-brand-purple-link-hover` | `#4A52B8` | Text link hover state (Why Lavender section) |
-| `--color-brand-purple-deep` | `#6149A2` | Icon SVG fill, accent elements |
-| `--color-brand-lavender-bg` | `#EDECFE` | Section backgrounds (About, feature sections) |
-| `--color-brand-text-muted` | `#4D4D62` | Feature/benefit italic description text |
-| `--color-brand-icon-bg` | `#FAFAFA` | Circular icon container backgrounds |
+| `--color-brand-purple` | `#636DCF` | CTA buttons, inline links |
+| `--color-brand-purple-hover` | `#4A52B8` | ALL hover states — primary button hover AND text link hover |
+| `--color-brand-purple-deep` | `#52448C` | Icon SVG fill, bold emphasis pulls — never on buttons or links |
+| `--color-brand-lavender-bg` | `#F5F1E8` | Cream section wash (max 1–2 per page) |
+| `--color-brand-cream` | `#F5F1E8` | Semantic alias for lavender-bg |
+| `--color-brand-text-muted` | `#4D4D62` | Feature/benefit italic description text, secondary copy |
+| `--color-brand-icon-bg` | `#EDE8D9` | Icon chip backgrounds on cream sections |
+
+**Retired April 2026 — do not reintroduce:**
+`#6149A2` (old deep purple), `#E1E0F1` (periwinkle), `#EDECFE` (pale lavender), `#505ABC` (old button hover — consolidated into `#4A52B8`)
 
 **Dawn scheme colors** (used via `rgb(var(--color-background))`, `rgb(var(--color-foreground))` etc.):
 
@@ -38,14 +41,17 @@ All brand colors are now defined as CSS custom properties in `layout/theme.liqui
 
 Dawn's color system uses `rgb(var(--color-foreground))` and `rgb(var(--color-background))` built from scheme settings. The active scheme is resolved at render time.
 
-| Scheme | Background | Text | Button | Button Label |
+| Scheme | Background | Text | Button | Notes |
 |---|---|---|---|---|
-| Scheme 1 (default) | `#ffffff` | `#121212` | `#121212` | `#ffffff` |
-| Scheme 2 (secondary) | `#f3f3f3` | `#121212` | `#121212` | `#f3f3f3` |
-| Scheme 3 (dark) | `#242833` | (light) | — | — |
+| scheme-1 (default) | `#ffffff` | `#121212` | `#121212` | Primary white — header, cart, password pages |
+| scheme-2 (secondary) | `#f3f3f3` | `#121212` | `#121212` | Light grey — collection/blog cards |
+| scheme-3 (dark) | `#242833` | `#ffffff` | `#ffffff` | Sold-out badge |
+| scheme-4 (black) | `#121212` | `#ffffff` | `#ffffff` | Sale badge |
+| scheme-bbl-cream | `#f5f1e8` | `#000000` | `#636dcf` | Cream section wash |
+| scheme-a0dd312f | `#fafafa` | `#000000` | `#636dcf` | Near-white card bg |
 
 **Rules:**
-- Use scheme-1 for primary sections, scheme-2 for alternating light-grey sections.
+- Use scheme-1 for primary sections. Cream sections use scheme-bbl-cream.
 - Custom 2025 sections use `var(--color-brand-*)` tokens defined in `theme.liquid` — never raw hex.
 - Never introduce new brand colors without a design decision. If a new color is needed, add it to `theme.liquid` `:root`, document it here, then reference it via its token.
 
@@ -101,8 +107,8 @@ The 2025 custom sections define their own type styles via inline `{%- style -%}`
 | Hero 2025 | CTA Button | `--font-heading-family` | 1.8rem · tablet: 1.6rem · mobile: 1.4rem | 700 | White (configurable via settings) |
 | Why Lavender | Section heading | `--font-heading-family` | 3.2rem · mobile: 2.8rem · small: 2.4rem | 600 | `#000000` |
 | Why Lavender | Body text | `--font-heading-family` | 1.8rem · mobile: 1.6rem · small: 1.4rem | 400 | `#000000` |
-| Why Lavender | Feature title | `--font-heading-family` | 1.8rem · mobile: 1.6rem · small: 1.4rem | 600 | `#000000` |
-| Why Lavender | Feature text | `--font-heading-family` | 1.6rem · mobile: 1.4rem | 400 italic | `var(--color-brand-text-muted)` |
+| Why Lavender | Feature title | `--font-heading-family` | 1.8rem · mobile: 1.6rem · small: 1.4rem | 400 | `var(--color-brand-text-muted)` |
+| Why Lavender | Feature text (quote) | `--font-heading-family` | 1.6rem · mobile: 1.4rem | 400 italic | `#000000` |
 | Why Lavender | CTA link | `--font-heading-family` | 1.8rem · mobile: 1.6rem · small: 1.4rem | 600 | `var(--color-brand-purple)` |
 | Home About | Body text | `--font-body-family` | 2.4rem · tablet: 2rem · mobile: 1.6rem | 400 | `#000000` |
 | Home About | Feature text | `--font-body-family` | 1.6rem · tablet: 1.4rem · mobile: 1.2rem | 400 | `#000000` |
@@ -137,7 +143,7 @@ Used for main CTAs (Add to Cart, Shop Now, etc.).
 | Border radius | `var(--buttons-radius)` → 8px |
 | Padding | `1.2rem 5.6rem` desktop · `1rem 3.2rem` tablet |
 | Font | `var(--font-heading-family)` 700, `1.8rem` desktop / `1.6rem` tablet / `1.4rem` mobile |
-| Hover background | `var(--color-brand-purple-hover)` → `#505ABC` |
+| Hover background | `var(--color-brand-purple-hover)` → `#4A52B8` |
 | Hover shadow | `0 4px 12px rgba(0, 0, 0, 0.15)` |
 | Transition | `all 0.3s ease` |
 
@@ -150,7 +156,7 @@ Used for main CTAs (Add to Cart, Shop Now, etc.).
 | Border radius | `var(--buttons-radius)` → 8px |
 | Padding | `1.2rem 4rem` |
 | Font | `var(--font-heading-family)` 700, `1.8rem` |
-| Hover background | `var(--color-brand-purple-hover)` → `#505ABC` |
+| Hover background | `var(--color-brand-purple-hover)` → `#4A52B8` |
 | Focus outline | `3px solid rgba(99, 109, 207, 0.4)` |
 
 ### Links

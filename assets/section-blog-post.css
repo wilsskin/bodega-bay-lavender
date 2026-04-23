@@ -93,8 +93,8 @@
 }
 
 .article-template__link:hover {
-  color: var(--color-brand-purple-link-hover);
-  text-decoration-color: var(--color-brand-purple-link-hover);
+  color: var(--color-brand-purple-hover);
+  text-decoration-color: var(--color-brand-purple-hover);
 }
 
 .article-template__link .icon-wrap {

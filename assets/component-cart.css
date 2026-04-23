@@ -186,7 +186,7 @@ cart-items .title-wrapper-with-link .title {
 
 /* Add border around header section */
 .cart-layout-wrapper > form .title-wrapper-with-link {
-  border: 1px solid #E1E0F1;
+  border: 1px solid rgba(18, 18, 18, 0.1);
   border-radius: 16px;
   margin: 0 24px 40px 24px;
   padding: 0 24px;

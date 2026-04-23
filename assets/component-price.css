@@ -3,8 +3,8 @@
   font-family: var(--font-body-family);
   letter-spacing: 0.05rem;
   line-height: 130%;
-  color: #4D4D62;
-  fill: #4D4D62;
+  color: var(--color-brand-text-muted);
+  fill: var(--color-brand-text-muted);
 }
 
 .price > * {
@@ -43,7 +43,7 @@
 .price--large {
   font-size: 1.8rem; /* 24px - consistent sizing */
   line-height: 130%;
-  color: #4D4D62;
+  color: var(--color-brand-text-muted);
 }
 
 .price--sold-out .price__availability,

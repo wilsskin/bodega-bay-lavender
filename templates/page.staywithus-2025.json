@@ -31,7 +31,7 @@
         "text_color": "#ffffff",
         "button_color": "#636dcf",
         "button_text_color": "#ffffff",
-        "button_hover_color": "#334fb4"
+        "button_hover_color": "#4a52b8"
       }
     },
     "stay_with_us_about_y8hjaY": {
@@ -200,7 +200,7 @@
         "email_form_iWME3V"
       ],
       "custom_css": [
-        ".newsletter-2025 {background-color: #e1e0f1;}"
+        ".newsletter-2025 {background-color: #f5f1e8;}"
       ],
       "name": "t:sections.newsletter.presets.name",
       "settings": {

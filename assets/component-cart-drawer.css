@@ -611,8 +611,7 @@ cart-drawer-items {
   height: 100%;
   width: 0%;
   min-height: 0.6rem;
-  background: #6149A2;
-  background: linear-gradient(270deg, #6149A2 0%, #636DCF 100%);
+  background: var(--color-brand-purple);
   border-radius: 0.3rem;
   transition: width 1s ease;
   z-index: 1;
@@ -652,7 +651,7 @@ cart-drawer-items {
   justify-content: center;
   gap: 10px;
   padding: 12px 40px;
-  background-color: #636DCF;
+  background-color: var(--color-brand-purple);
   color: #ffffff;
   text-decoration: none;
   border-radius: 8px;
@@ -671,7 +670,7 @@ cart-drawer-items {
 }
 
 .cart-drawer .cart__checkout-button:hover {
-  background-color: #505ABC;
+  background-color: var(--color-brand-purple-hover);
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

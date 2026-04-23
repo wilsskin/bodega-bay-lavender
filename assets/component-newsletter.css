@@ -68,7 +68,7 @@
 
 .newsletter-form__button:not(:focus-visible):not(.focused) {
   box-shadow: none;
-  background-color: #636DCF;
+  background-color: var(--color-brand-purple);
 }
 
 .newsletter-form__button .icon {
