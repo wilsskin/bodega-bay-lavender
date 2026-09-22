@@ -14,10 +14,10 @@
       "name": "Hero Left",
       "settings": {
         "image": "shopify://shop_images/hero-new.webp",
-        "heading": "COASTAL LAVENDER TO HELP YOU UNWIND",
+        "heading": "PURE. COASTAL. HOME-GROWN.",
         "heading_size": "h1",
-        "subtitle": "Lavender goods from our family ranch on the Sonoma Coast",
-        "subtitle_style": "h3",
+        "subtitle": "Artisanal lavender products crafted with sun and sea air",
+        "subtitle_style": "body",
         "button_label": "Shop Now",
         "button_link": "shopify://collections/featured-products",
         "overlay_opacity": 0,
